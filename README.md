@@ -1,2 +1,2 @@
 # Weather APP 
-Application using JS Promises and async & await
+Application using Object Oriented Javascript Promises and async & await
