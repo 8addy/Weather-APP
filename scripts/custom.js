@@ -31,9 +31,17 @@ const updateUI = data=>{
 }
 
 
+/*Check if there is a city in the local storage then if its true so put in input*/
+if(localStorage.getItem('city')){
+	forcast.updateWeather(localStorage.getItem('city')).then(data=>{
+		updateUI(data);
+	}).catch(err=>{console.log(err)});
+}
+
 form.addEventListener('submit', e =>{
 	e.preventDefault();
 	let city = form.city.value.trim();
+	localStorage.setItem('city', city);
 	forcast.updateWeather(city).then(data=>{
 		updateUI(data);
 	}).catch(err=>{console.log(err)});
